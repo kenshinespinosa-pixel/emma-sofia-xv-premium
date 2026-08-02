@@ -1,1 +1,109 @@
+/*=================================
+RESET
+=================================*/
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#050505;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/*=================================
+PORTADA
+=================================*/
+
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.hero-img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(.75);
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        rgba(0,0,0,.20),
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.80)
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    width:90%;
+    text-align:center;
+}
+
+.subtitulo{
+    display:block;
+    font-family:'Cinzel',serif;
+    color:#d4af37;
+    letter-spacing:6px;
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+.hero-content h1{
+    font-family:'Great Vibes',cursive;
+    font-size:76px;
+    color:#f5d76e;
+    text-shadow:
+        0 0 15px rgba(212,175,55,.9),
+        0 0 35px rgba(255,215,0,.5);
+}
+
+.hero-content h2{
+    margin-top:15px;
+    font-family:'Cinzel',serif;
+    letter-spacing:4px;
+    font-size:28px;
+}
+
+.hero-content p{
+    margin-top:35px;
+    color:#f5d76e;
+    font-size:22px;
+}
+
+#abrirInvitacion{
+    margin-top:40px;
+    padding:18px 45px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(#f7e08c,#b8860b);
+    color:#111;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 0 25px rgba(255,215,0,.45);
+}
+
+#abrirInvitacion:hover{
+    transform:scale(1.05);
+}
