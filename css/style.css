@@ -152,8 +152,7 @@ PORTADA
         0 0 28px rgba(255,215,0,.8),
         0 0 60px rgba(184,134,11,.6);
 
-}
-/* =========================
+}/* =========================
    EVENTOS Y DETALLES
 ========================= */
 
@@ -285,4 +284,141 @@ PORTADA
     .fotos img {
         height: 230px;
     }
+}/* =========================
+   CONFIRMACIÓN, MÚSICA Y CIERRE
+========================= */
+
+/* Confirmación de asistencia */
+.confirmacion {
+    background: linear-gradient(180deg, #000, #111);
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+}
+
+.confirmacion h2 {
+    font-family: "Playfair Display", serif;
+    color: #d4af37;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.confirmacion p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background: #25d366;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn-whatsapp:hover {
+    transform: scale(1.05);
+}
+
+
+/* Música */
+.music-control {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #d4af37;
+    color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 0 15px rgba(212,175,55,.5);
+}
+
+
+/* Animaciones */
+.fade-in {
+    animation: aparecer 1.5s ease forwards;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.zoom-in {
+    animation: zoom 1.5s ease forwards;
+}
+
+@keyframes zoom {
+    from {
+        opacity: 0;
+        transform: scale(.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* Cierre */
+.final {
+    background: #000;
+    padding: 70px 20px;
+    text-align: center;
+    color: white;
+}
+
+.final h2 {
+    color: #d4af37;
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+}
+
+.final p {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+
+/* Ajustes móviles finales */
+@media(max-width:768px){
+
+    .confirmacion h2 {
+        font-size: 28px;
+    }
+
+    .confirmacion p {
+        font-size: 16px;
+    }
+
+    .final h2 {
+        font-size: 30px;
+    }
+
+    .music-control {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
