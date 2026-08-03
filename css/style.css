@@ -427,7 +427,7 @@ PORTADA
 #contador{
     display:flex;
     justify-content:center;
-    gap:20px;
+    gap:10px;
     flex-wrap:wrap;
     margin-top:30px;
 }
@@ -435,8 +435,8 @@ PORTADA
 #contador div{
     background:#d4af37;
     color:#111;
-    width:90px;
-    height:90px;
+    width:75px;
+    height:75px;
     border-radius:15px;
     display:flex;
     flex-direction:column;
@@ -446,14 +446,14 @@ PORTADA
 }
 
 #contador span{
-    font-size:34px;
+    font-size:28px;
     font-weight:700;
     line-height:1;
 }
 
 #contador p{
     margin-top:8px;
-    font-size:14px;
+    font-size:12px;
     font-weight:600;
     text-transform:uppercase;
 
