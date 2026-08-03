@@ -421,4 +421,40 @@ PORTADA
         bottom: 15px;
         right: 15px;
     }
+
+    /* ===== CONTADOR ===== */
+
+#contador{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+#contador div{
+    background:#d4af37;
+    color:#111;
+    width:90px;
+    height:90px;
+    border-radius:15px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+#contador span{
+    font-size:34px;
+    font-weight:700;
+    line-height:1;
+}
+
+#contador p{
+    margin-top:8px;
+    font-size:14px;
+    font-weight:600;
+    text-transform:uppercase;
+
 }
