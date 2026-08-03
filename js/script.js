@@ -2,18 +2,23 @@
 // BOTÓN ABRIR INVITACIÓN
 // =========================
 
-const botonAbrir = document.getElementById("abrirInvitacion");
+const botonAbrir.addEventListener("click", () => {
 
-if (botonAbrir) {
+    if (musica.paused) {
+        musica.play();
 
-    botonAbrir.addEventListener("click", () => {
+        reproduciendo = true;
 
-        window.scrollTo({
-            top: window.innerHeight,
-            behavior: "smooth"
-        });
+        botonMusica.innerHTML =
+            '<i class="fa-solid fa-pause"></i>';
+    }
 
+    window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth"
     });
+
+});
 
 }
 
