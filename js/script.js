@@ -1,94 +1,52 @@
 // =========================
-// BOTÓN ABRIR INVITACIÓN
+// ELEMENTOS
 // =========================
 
-const botonAbrir.addEventListener("click", () => {
+const botonAbrir = document.getElementById("abrirInvitacion");
+const musica = document.getElementById("musica");
+const botonMusica = document.getElementById("botonMusica");
 
-    if (musica.paused) {
-        musica.play();
+let reproduciendo = false;
 
-        reproduciendo = true;
 
-        botonMusica.innerHTML =
-            '<i class="fa-solid fa-pause"></i>';
-    }
+// =========================
+// ABRIR INVITACIÓN
+// =========================
 
-    window.scrollTo({
-        top: window.innerHeight,
-        behavior: "smooth"
+if (botonAbrir) {
+
+    botonAbrir.addEventListener("click", () => {
+
+        if (musica && !reproduciendo) {
+
+            musica.play().then(() => {
+
+                reproduciendo = true;
+
+                if (botonMusica) {
+                    botonMusica.innerHTML =
+                    '<i class="fa-solid fa-pause"></i>';
+                }
+
+            }).catch(() => {});
+
+        }
+
+        window.scrollTo({
+            top: window.innerHeight,
+            behavior: "smooth"
+        });
+
     });
-
-});
 
 }
 
 
 // =========================
-// CONTADOR XV AÑOS
+// BOTÓN DE MÚSICA
 // =========================
-
-const fechaEvento = new Date("September 26, 2026 18:00:00").getTime();
-
-
-const contador = setInterval(() => {
-
-
-    const ahora = new Date().getTime();
-
-    const distancia = fechaEvento - ahora;
-
-
-    const dias = Math.floor(
-        distancia / (1000 * 60 * 60 * 24)
-    );
-
-
-    const horas = Math.floor(
-        (distancia % (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60)
-    );
-
-
-    const minutos = Math.floor(
-        (distancia % (1000 * 60 * 60)) /
-        (1000 * 60)
-    );
-
-
-    const segundos = Math.floor(
-        (distancia % (1000 * 60)) /
-        1000
-    );
-
-
-    document.getElementById("dias").innerHTML = dias;
-    document.getElementById("horas").innerHTML = horas;
-    document.getElementById("minutos").innerHTML = minutos;
-    document.getElementById("segundos").innerHTML = segundos;
-
-
-    if (distancia < 0) {
-
-        clearInterval(contador);
-
-        document.getElementById("contador").innerHTML =
-        "¡Hoy es el gran día!";
-
-    }
-
-
-}, 1000);
-
-// =========================
-// MÚSICA DE FONDO
-// =========================
-
-const musica = document.getElementById("musica");
-const botonMusica = document.getElementById("botonMusica");
 
 if (musica && botonMusica) {
-
-    let reproduciendo = false;
 
     botonMusica.addEventListener("click", () => {
 
@@ -96,16 +54,58 @@ if (musica && botonMusica) {
 
             musica.pause();
             reproduciendo = false;
-            botonMusica.innerHTML = '<i class="fa-solid fa-music"></i>';
+
+            botonMusica.innerHTML =
+            '<i class="fa-solid fa-music"></i>';
 
         } else {
 
-            musica.play();
-            reproduciendo = true;
-            botonMusica.innerHTML = '<i class="fa-solid fa-pause"></i>';
+            musica.play().then(() => {
+
+                reproduciendo = true;
+
+                botonMusica.innerHTML =
+                '<i class="fa-solid fa-pause"></i>';
+
+            }).catch(() => {});
 
         }
 
     });
 
 }
+
+
+// =========================
+// CONTADOR
+// =========================
+
+const fechaEvento = new Date("September 26, 2026 18:00:00").getTime();
+
+setInterval(() => {
+
+    const ahora = new Date().getTime();
+    const distancia = fechaEvento - ahora;
+
+    if (distancia <= 0) {
+
+        document.getElementById("contador").innerHTML =
+        "<h2>¡Hoy es el gran día!</h2>";
+
+        return;
+
+    }
+
+    document.getElementById("dias").textContent =
+        Math.floor(distancia / (1000 * 60 * 60 * 24));
+
+    document.getElementById("horas").textContent =
+        Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+    document.getElementById("minutos").textContent =
+        Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+
+    document.getElementById("segundos").textContent =
+        Math.floor((distancia % (1000 * 60)) / 1000);
+
+}, 1000);
