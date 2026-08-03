@@ -73,3 +73,34 @@ const contador = setInterval(() => {
 
 
 }, 1000);
+
+// =========================
+// MÚSICA DE FONDO
+// =========================
+
+const musica = document.getElementById("musica");
+const botonMusica = document.getElementById("botonMusica");
+
+if (musica && botonMusica) {
+
+    let reproduciendo = false;
+
+    botonMusica.addEventListener("click", () => {
+
+        if (reproduciendo) {
+
+            musica.pause();
+            reproduciendo = false;
+            botonMusica.innerHTML = '<i class="fa-solid fa-music"></i>';
+
+        } else {
+
+            musica.play();
+            reproduciendo = true;
+            botonMusica.innerHTML = '<i class="fa-solid fa-pause"></i>';
+
+        }
+
+    });
+
+}
