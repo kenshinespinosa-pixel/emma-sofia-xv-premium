@@ -17,19 +17,9 @@ if (botonAbrir) {
 
     botonAbrir.addEventListener("click", () => {
 
-        if (musica && !reproduciendo) {
-
-            musica.play().then(() => {
-
-                reproduciendo = true;
-
-                if (botonMusica) {
-                    botonMusica.innerHTML =
-                    '<i class="fa-solid fa-pause"></i>';
-                }
-
-            }).catch(() => {});
-
+        // Si aún no está reproduciendo, simula el clic
+        if (botonMusica && !reproduciendo) {
+            botonMusica.click();
         }
 
         window.scrollTo({
