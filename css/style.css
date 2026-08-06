@@ -305,31 +305,36 @@ body{
     color:#ddd;
     line-height:1.7;
 }
-
-.botones-ubicacion{
-    width: 100%;
-    max-width: 500px;
-    margin: 45px auto 70px;
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-    padding: 0 20px;
-}
-
 .btn-mapa{
-    display:inline-block;
-    background:linear-gradient(180deg,#f8de79,#d4af37);
-    color:#111;
-    text-decoration:none;
-    padding:16px 34px;
-    border-radius:50px;
-    font-weight:bold;
-    transition:.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    width: 100%;
+    padding: 18px 22px;
+
+    background: linear-gradient(180deg,#f7df73,#d8af2e);
+    color: #111;
+    text-decoration: none;
+
+    border-radius: 50px;
+    font-size: 1.15rem;
+    font-weight: 700;
+
+    box-shadow: 0 8px 25px rgba(212,175,55,.35);
+    transition: .3s;
 }
 
 .btn-mapa:hover{
-    transform:scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(212,175,55,.45);
 }
+
+.btn-mapa i{
+    font-size: 1.2rem;
+}
+
 
 /* GALERÍA */
 
